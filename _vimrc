@@ -76,3 +76,14 @@ let g:neocomplcache_enable_at_startup = 1
 nmap <F2> <Plug>(altr-forward)
 nmap <S-F2> <Plug>(altr-back)
 
+"for Vundle
+filetype off
+
+set rtp+=~/dotfiles/vimfiles/vundle.git/
+call vundle#rc()
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/neocomplcache'
+Bundle 'thinca/vim-ref'
+Bundle 'thinca/vim-quickrun'
+
+filetype plugin indent on
