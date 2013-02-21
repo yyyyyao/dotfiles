@@ -38,6 +38,7 @@ set softtabstop=2
 "define cindent/autoindent spaces(insert space automatically)
 set shiftwidth=2
 set textwidth=80
+
 "行頭の余白内でTab打つとshiftwidth分インデントする
 set smarttab
 "replace Tab to Space
@@ -85,10 +86,12 @@ autocmd BufNewFile,BufRead *.ino setf arduino
 
 "for neocomplcache
 let g:neocomplcache_enable_at_startup = 1
-"g:neocomplcache_snippets_dir='~/dotfiles/
-imap <C-k> <Plug>(neocomplcache_snippets_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_expand)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
 
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 "for grep.vim
 command! -nargs=1 Gb :GrepBuffer 
@@ -108,6 +111,7 @@ autocmd BufNewFile,BufRead Makefile setlocal noexpandtab
 autocmd BufNewFile,BufRead makefile setlocal noexpandtab
 
 "for NeoBundle
+"use https: instead of git:
 let g:neobundle_default_git_protocol='https'
 filetype off
 
