@@ -21,15 +21,21 @@ set hidden
 
 set noerrorbells
 set tabstop=8
-set backspace=2
-set softtabstop=2
+set backspace=4
+set softtabstop=4
 set shiftwidth=2
 set textwidth=80
 set smarttab
 set expandtab
 set smartindent
 "Python config
-autocmd FileType python setl nosmartindent
+autocmd FileType python set tabstop=8
+autocmd FileType python set softtabstop=4
+autocmd FileType python set shiftwidth=4
+autocmd FileType python set textwidth=80
+autocmd FileType python set smarttab
+autocmd FileType python set expandtab
+autocmd FileType python set nosmartindent
 "Execution@Ctrl + P
 function! s:Exec()
     exe "!" . &ft . " %"        
