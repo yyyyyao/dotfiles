@@ -1,6 +1,5 @@
 filetype plugin indent on
 syntax on
-set nocompatible
 set nobackup
 set autoindent
 set encoding=utf-8
@@ -61,8 +60,6 @@ function! s:Exec()
 command! Exec call <SID>Exec() 
 map <silent> <C-P> :call <SID>Exec()<CR>
 
-"colorscheme evening
-"
 "Gtags Config
 map <C-g> :Gtags
 map <C-i> :Gtags -f %<CR>
@@ -110,50 +107,58 @@ let g:Align_xstrlen=3
 autocmd BufNewFile,BufRead Makefile setlocal noexpandtab
 autocmd BufNewFile,BufRead makefile setlocal noexpandtab
 
-"for Vundle
+"for NeoBundle
+let g:neobundle_default_git_protocol='https'
 filetype off
 
-set rtp+=~/dotfiles/vimfiles/vundle.git/
-call vundle#rc()
-"neocomp!!
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neocomplcache-snippets-complete'
-"Unite!!!
-Bundle 'Shougo/unite.vim'
-Bundle 'ujihisa/unite-colorscheme'
-Bundle 'ujihisa/unite-font'
-"reference by vim
-Bundle 'thinca/vim-ref'
-"run program quickly
-Bundle 'thinca/vim-quickrun'
-"make Vim as C/C++ IDE
-Bundle 'vim-scripts/c.vim'
-"Source code tagging
-Bundle 'vim-scripts/gtags.vim'
-"add good Colorscheme
-Bundle 'vim-scripts/Lucius'
-"grep from vim
-Bundle 'grep.vim'
-"yank manage
-Bundle 'YankRing.vim'
-"sudo by vim
-Bundle 'sudo.vim'
-"align char
-Bundle 'smartchr'
-"use ack command from vim
-Bundle 'ack.vim'
-"use ruby's regular expression
-Bundle 'othree/eregex.vim'
-"align Source code
-Bundle 'vim-scripts/Align'
-"ja-help docs
-Bundle 'vim-jp/vimdoc-ja'
+set nocompatible               " Be iMproved
 
-filetype plugin indent on
+if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+"neocomp!!
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+"Unite!!!
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'ujihisa/unite-font'
+"reference by vim
+NeoBundle 'thinca/vim-ref'
+"run program quickly
+NeoBundle 'thinca/vim-quickrun'
+"make Vim as C/C++ IDE
+NeoBundle 'vim-scripts/c.vim'
+"Source code tagging
+NeoBundle 'vim-scripts/gtags.vim'
+"add good Colorscheme
+NeoBundle 'vim-scripts/Lucius'
+"grep from vim
+NeoBundle 'grep.vim'
+"yank manage
+NeoBundle 'YankRing.vim'
+"sudo by vim
+NeoBundle 'sudo.vim'
+"align char
+NeoBundle 'smartchr'
+"use ack command from vim
+NeoBundle 'ack.vim'
+"use ruby's regular expression
+NeoBundle 'othree/eregex.vim'
+"align Source code
+NeoBundle 'vim-scripts/Align'
+"ja-help docs
+NeoBundle 'vim-jp/vimdoc-ja'
+
+" Installation check.
+NeoBundleCheck
 
 "color settings
-set t_Co=256
-colorscheme lucius
-LuciusBlack
-syntax on
+"set t_Co=256
+"LuciusBlack
+colorscheme zellner
 
+filetype plugin indent on
