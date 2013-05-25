@@ -30,6 +30,7 @@ augroup END
 highlight CursorLine ctermbg=black guibg=black
 
 set noerrorbells
+set visualbell
 set backspace=2
 "Tabを空白何文字分に展開するか
 set tabstop=8
@@ -83,6 +84,13 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 
 "for arduino
 autocmd BufNewFile,BufRead *.ino setf arduino
+
+"for CUDA
+au BufNewFile,BufRead *.cu set filetype=cu
+au BufNewFile,BufRead *.cuh set filetype=cu
+
+"for OpenCL
+au BufNewFile,BufRead *.cl set filetype=cl
 
 "for neocomplcache
 let g:neocomplcache_enable_at_startup = 1
@@ -156,6 +164,7 @@ NeoBundle 'othree/eregex.vim'
 NeoBundle 'vim-scripts/Align'
 "ja-help docs
 NeoBundle 'vim-jp/vimdoc-ja'
+
 
 " Installation check.
 NeoBundleCheck
