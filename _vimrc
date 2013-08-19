@@ -55,17 +55,16 @@ autocmd FileType python set textwidth=80
 autocmd FileType python set smarttab
 autocmd FileType python set expandtab
 autocmd FileType python set nosmartindent
-"Execution@Ctrl + P
+"Execution@Ctrl + @
 function! s:Exec()
     exe "!" . &ft . " %"        
 :endfunction         
 command! Exec call <SID>Exec() 
-map <silent> <C-P> :call <SID>Exec()<CR>
+map <silent> <C-@> :call <SID>Exec()<CR>
 
 "Gtags Config
-map <C-g> :Gtags
 map <C-i> :Gtags -f %<CR>
-map <C-j> :GtagsCursor<CR>
+map <C-g> :GtagsCursor<CR>
 "map <C-n> :cn<CR>
 "map <C-p> :cp<CR>
 
