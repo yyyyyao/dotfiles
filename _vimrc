@@ -113,7 +113,7 @@ let eregex_replacement=3
 "for Align
 let g:Align_xstrlen=3
 
-"for Makfile
+"for Makefile
 autocmd BufNewFile,BufRead Makefile setlocal noexpandtab
 autocmd BufNewFile,BufRead makefile setlocal noexpandtab
 
@@ -142,7 +142,7 @@ NeoBundle 'thinca/vim-ref'
 "run program quickly
 NeoBundle 'thinca/vim-quickrun'
 "make Vim as C/C++ IDE
-NeoBundle 'vim-scripts/c.vim'
+"NeoBundle 'vim-scripts/c.vim'
 "Source code tagging
 NeoBundle 'vim-scripts/gtags.vim'
 "add good Colorscheme
