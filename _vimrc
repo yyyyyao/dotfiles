@@ -35,9 +35,9 @@ set backspace=2
 "Tabを空白何文字分に展開するか
 set tabstop=8
 "Tabを押した時に挿入される空白の量
-set softtabstop=2
+set softtabstop=4
 "define cindent/autoindent spaces(insert space automatically)
-set shiftwidth=2
+set shiftwidth=4
 set textwidth=80
 
 "行頭の余白内でTab打つとshiftwidth分インデントする
@@ -131,8 +131,9 @@ endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 
 "neocomp!!
-NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 "Unite!!!
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
